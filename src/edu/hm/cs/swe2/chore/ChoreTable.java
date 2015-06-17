@@ -1,5 +1,7 @@
 package edu.hm.cs.swe2.chore;
 
+import edu.hm.cs.sw2.inhabitant.Inhabitant;
+
 public class ChoreTable {
 
 	private Chore chore;
@@ -30,6 +32,13 @@ public class ChoreTable {
 
 	}
 
-
+public void fillChoreTable(Inhabitant inhabitant){
+	
+	System.out.println("Zuteilen der Bewohner zu den Aufgaben: ");
+	
+	
+	
+	
+}
 
 }

@@ -8,15 +8,19 @@ public class Week {
 
 	public int year;
 
-	public int Week(int week, int year) throws Exception {
+	public Week(int week, int year) throws Exception{
 		this.year = year;
-		week = Calendar.WEEK_OF_YEAR;
-		if (this.week < 1 || this.week > 52) {
-			System.out.println("Unvalid number of Week");
-
+		if (week < 1){
+			throw new InvalidWeekFigureException("Week shouldn´t be lower than 1.");
+		
+			
+		}else if(week > 52){
+			throw new InvalidWeekFigureException("Week shouln´t be higher than 52.");
+			
 		}
-		return year;
-
+		else{
+			this.week = week;
+		}
 	}
 
 	public String toString() {
