@@ -34,22 +34,22 @@ public class ChoreTable {
 
 	}
 
-public void fillChoreTable(Inhabitant inhabitant){
-	
-	System.out.println("Zuteilen der Bewohner zu den Aufgaben: ");
-	
-	Random inhabitantsGenerator = new Random();
-	
+	public void fillChoreTable(Inhabitant inhabitant) {
+
+		System.out.println("Zuteilen der Bewohner zu den Aufgaben: ");
+
+		Random inhabitantsGenerator = new Random();
+
 		int rndNum = inhabitantsGenerator.nextInt(0);
-		for (int i = 0; i < rndNum; i++){
+		for (int i = 0; i < rndNum; i++) {
 			this.fillChoreTable(inhabitant);
 		}
 	}
-	
-	public void printChoreTable(){
+
+	public void printChoreTable() {
 		
-		System.out.println(week + "\" chore + );
+		System.out.println("Woche" + "\" + "Aufgabe" + "\t" + Klo Putzen" + "Küche wischen\t" + "Abspülen\t" + "Kochen\t" + "\n"
+		+ week + "\t");
+
 	}
 }
-
-
