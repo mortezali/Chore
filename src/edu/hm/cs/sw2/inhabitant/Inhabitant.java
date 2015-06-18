@@ -2,13 +2,11 @@ package edu.hm.cs.sw2.inhabitant;
 
 public class Inhabitant {
 
-	private String[] name;
+	private String[] names;
 
-	public void printInhabitant() {
-		// schleife hat keinen Sinn und darf nicht mit ; abgeschlossen werden
-		// =>{}
-		// for (int i = 0; i < name.length; i++);
-		System.out.println(name);
+	public void printInhabitant(int index) {
+		
+		System.out.println(names[index]);
 
 	}
 
@@ -23,8 +21,8 @@ public class Inhabitant {
 		// Lösungsvorschlag Paul:
 		String output = "In der WG wohnen ";
 		for (int i = 0; i < getNumberOfInhabitants(); i++) {
-			output += name[i];
-			if (i < name.length - 1) {
+			output += names[i];
+			if (i < names.length - 1) {
 				output += ", ";
 			}
 		}
@@ -39,13 +37,12 @@ public class Inhabitant {
 
 		// pauls Lösungsvorschlag:
 
-		this.name = new String[name.length];
+		this.names = new String[name.length];
 		for (int i = 0; i < name.length; i++) {
-			this.name[i] = name[i];
+			this.names[i] = name[i];
 		}
 		printInhabitants();
 
-		printInhabitants();
 
 	}
 
@@ -55,12 +52,12 @@ public class Inhabitant {
 
 	// es wird String returned und kein String Array
 	public String getName(int index) {
-		return name[index];
+		return names[index];
 	}
 
 	// kein Parameter verlagnt
 	public int getNumberOfInhabitants() {
-		return name.length;
+		return names.length;
 
 	}
 
@@ -76,7 +73,7 @@ public class Inhabitant {
 				newNames[i] = name;
 			}
 		}
-			this.name = newNames;
+			this.names = newNames;
 		printInhabitant();
 
 		// von paul:
@@ -120,7 +117,7 @@ public class Inhabitant {
 		 for(int i = 0; i<getNumberOfInhabitants(); i++){
 		 if(getInhabitant(i).equals(name)){
 		 tempNumber--;
-		 System.out.println(name + " zieht aus der Wg aus.");
+		 System.out.println(name + " zieht heute aus der Wg aus.");
 		
 		 } else {
 		 newNames[tempNumber] = name;
@@ -128,7 +125,7 @@ public class Inhabitant {
 		 tempNumber++;
 		 }
 		
-		 this.name = newNames;
+		 this.names = newNames;
 		 printInhabitants();
 		 }
 		
@@ -148,8 +145,8 @@ public class Inhabitant {
 	//System.out.println("heute zieh " + name + "aus und " + newName + "zieht ein");
 	for (int i = 0; i <getNumberOfInhabitants(); i++){
 		
-		if(getInhabitant(i).equals(name)){
-		name[i] = newName;
+		if(getInhabitant(i).equals(names)){
+		names[i] = newName;
 		
 		System.out.println("Für " + getInhabitant(i) + " zieht " + newName + " neu in die WG ein.");
 	}

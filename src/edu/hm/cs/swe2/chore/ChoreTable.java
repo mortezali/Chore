@@ -48,8 +48,8 @@ public class ChoreTable {
 
 	public void printChoreTable() {
 		
-		System.out.println("Woche" + "\" + "Aufgabe" + "\t" + Klo Putzen" + "Küche wischen\t" + "Abspülen\t" + "Kochen\t" + "\n"
-		+ week + "\t");
+		System.out.println("Woche" + "\\" + "Aufgabe\t" + "Klo Putzen\t" + "Küche wischen\t" + "Abspülen\t" + "Kochen\t" + "\n"
+		+ week + "\t" +  + );
 
 	}
 }
