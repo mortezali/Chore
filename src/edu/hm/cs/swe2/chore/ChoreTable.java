@@ -1,5 +1,7 @@
 package edu.hm.cs.swe2.chore;
 
+import java.util.Random;
+
 import edu.hm.cs.sw2.inhabitant.Inhabitant;
 
 public class ChoreTable {
@@ -36,9 +38,18 @@ public void fillChoreTable(Inhabitant inhabitant){
 	
 	System.out.println("Zuteilen der Bewohner zu den Aufgaben: ");
 	
+	Random inhabitantsGenerator = new Random();
 	
+		int rndNum = inhabitantsGenerator.nextInt(0);
+		for (int i = 0; i < rndNum; i++){
+			this.fillChoreTable(inhabitant);
+		}
+	}
 	
-	
+	public void printChoreTable(){
+		
+		System.out.println(week + "\" chore + );
+	}
 }
 
-}
+

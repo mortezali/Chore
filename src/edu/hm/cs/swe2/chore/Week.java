@@ -22,6 +22,15 @@ public class Week {
 			this.week = week;
 		}
 	}
+	
+	public int addWeeks(int figuresOfWeek) throws Exception{
+		
+		if (week > 52 ){
+			throw new InvalidWeekFigureException ("Week shouln´t be higher than 52.");
+		}
+		return this.week + figuresOfWeek;
+		
+	}
 
 	public String toString() {
 

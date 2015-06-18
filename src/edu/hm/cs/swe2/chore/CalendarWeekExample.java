@@ -12,7 +12,7 @@ package edu.hm.cs.swe2.chore;
 	import java.util.Locale;
 	 
 	/**
-	 * @author Tom
+	 * 
 	 *
 	 */
 	public class CalendarWeekExample {
