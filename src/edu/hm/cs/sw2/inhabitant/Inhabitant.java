@@ -6,7 +6,7 @@ public class Inhabitant {
 
 	public void printInhabitant(int index) {
 		
-		System.out.println(names[index]);
+		System.out.print(names[index]);
 
 	}
 
@@ -74,8 +74,6 @@ public class Inhabitant {
 			}
 		}
 			this.names = newNames;
-		printInhabitant();
-
 		// von paul:
 		// String[] newNames = new String[getNumberOfInhabitants() + 1];
 		// for (int i = 0; i < newNames.length; i++) {

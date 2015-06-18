@@ -2,7 +2,7 @@ package edu.hm.cs.swe2.chore;
 
 public class Chore {
 
-	private final String[] chore = { "Klo Putze", "Küche wischen", "Abspülen",
+	private final String[] chore = { "Klo Putzen", "Küche wischen", "Abspülen",
 			"Kochen" };
 
 	public String[] getChore(Chore index) {

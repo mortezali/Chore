@@ -9,7 +9,7 @@ public class ChoreTable {
 	private Chore chore;
 	private Week week;
 	private int weekCount;
-	private String[] choresToDo;
+	private String[] choresToDo = new String[chore.getNumberOfChores()];
 
 	public ChoreTable(Week week, int weekCount) {
 
@@ -40,7 +40,7 @@ public class ChoreTable {
 
 		Random inhabitantsGenerator = new Random();
 
-		int rndNum = inhabitantsGenerator.nextInt(0);
+		int rndNum = inhabitantsGenerator.nextInt(inhabitant.getNumberOfInhabitants());
 		for (int i = 0; i < rndNum; i++) {
 			this.fillChoreTable(inhabitant);
 		}
@@ -49,7 +49,7 @@ public class ChoreTable {
 	public void printChoreTable() {
 		
 		System.out.println("Woche" + "\\" + "Aufgabe\t" + "Klo Putzen\t" + "Küche wischen\t" + "Abspülen\t" + "Kochen\t" + "\n"
-		+ week + "\t" +  + );
+		+ week + "\t");
 
 	}
 }
