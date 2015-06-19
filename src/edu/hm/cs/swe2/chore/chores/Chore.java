@@ -1,4 +1,4 @@
-package edu.hm.cs.swe2.chore;
+package edu.hm.cs.swe2.chore.chores;
 
 public class Chore {
 

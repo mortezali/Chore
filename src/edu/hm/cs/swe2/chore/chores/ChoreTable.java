@@ -1,8 +1,10 @@
-package edu.hm.cs.swe2.chore;
+package edu.hm.cs.swe2.chore.chores;
 
 import java.util.Random;
 
 import edu.hm.cs.sw2.inhabitant.Inhabitant;
+import edu.hm.cs.swe2.chore.NoWeeksToPlanException;
+import edu.hm.cs.swe2.chore.Week;
 
 public class ChoreTable {
 
