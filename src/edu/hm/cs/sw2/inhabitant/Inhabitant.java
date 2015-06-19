@@ -112,7 +112,7 @@ public class Inhabitant {
 		String[] newNames = new String[getNumberOfInhabitants() - 1];
 		int tempNumber = 0;
 		for (int i = 0; i < getNumberOfInhabitants(); i++) {
-			if (getInhabitant(i).equals(name)) {
+			if (getName(i).equals(name)) {
 				tempNumber--;
 				System.out.println(name + " zieht heute aus der Wg aus.");
 
