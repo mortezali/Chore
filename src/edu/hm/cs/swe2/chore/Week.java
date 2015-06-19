@@ -51,11 +51,11 @@ public class Week {
 	public void setWeek(int week) throws WeekTooLowException, WeekTooHighException {
 		if (week < 1) {
 			throw new WeekTooLowException(
-					"Week shouldn´t be lower than 1.");
+					"Week shouldnÂ´t be lower than 1.");
 
 		} else if (week > WEEKS_OF_YEAR) {
 			throw new WeekTooHighException(
-					"Week shouln´t be higher than 52.");
+					"Week shoulnÂ´t be higher than 52.");
 
 		} else {
 

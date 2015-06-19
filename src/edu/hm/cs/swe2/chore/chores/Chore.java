@@ -6,9 +6,9 @@ public class Chore {
 			"Kochen" };
 
 	
-	//nochmal überprüfen Morteza
-	String getChore(int index) {
-		return chore[index];
+	//nochmal ï¿½berprï¿½fen Morteza
+	String[] getChore(int index) {
+		return chore;
 	}
 
 //	public void printChore(Chore index) {
@@ -21,7 +21,7 @@ public class Chore {
 	
 	//nochmal 1) c genau durchlesen
 	void printChore(int index){
-		System.out.println(getChore(index));
+		System.out.println(chore);
 	}
 	
 	
