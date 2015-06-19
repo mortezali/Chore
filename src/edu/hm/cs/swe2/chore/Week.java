@@ -1,35 +1,42 @@
 package edu.hm.cs.swe2.chore;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import edu.hm.cs.swe2.chore.exception.WeekTooHighException;
+import edu.hm.cs.swe2.chore.exception.WeekTooLowException;
 
 public class Week {
 	public int week;
 
 	public int year;
 
-	public Week(int week, int year) throws Exception{
+	final static int WEEKS_OF_YEAR = 52;
+
+	public Week(int week, int year)  {
 		this.year = year;
-		if (week < 1){
-			throw new InvalidWeekFigureException("Week shouldn´t be lower than 1.");
-		
+		try {
+			setWeek(week);
+		} catch (WeekTooLowException e) {
+			this.week = 1;
+			e.printStackTrace();
+		} catch (WeekTooHighException e) {
+			this.week = week%WEEKS_OF_YEAR;
+			this.year += week/WEEKS_OF_YEAR;
 			
-		}else if(week > 52){
-			throw new InvalidWeekFigureException("Week shouln´t be higher than 52.");
-			
-		}
-		else{
-			this.week = week;
+			e.printStackTrace();
 		}
 	}
-	
-	public int addWeeks(int figuresOfWeek) throws Exception{
-		
-		if (week > 52 ){
-			throw new InvalidWeekFigureException ("Week shouln´t be higher than 52.");
-		}
-		return this.week + figuresOfWeek;
-		
+
+	// public int addWeeks(int figuresOfWeek) throws Exception{
+	//
+	// if (week > WEEKS_OF_YEAR ){
+	// throw new InvalidWeekFigureException
+	// ("Week shouln´t be higher than 52.");
+	// }
+	// return this.week + figuresOfWeek;
+	//
+	// }
+	public Week addWeeks(int figuresOfWeek)throws WeekTooLowException {
+		Week newWeek = new Week(getWeek()+figuresOfWeek, getYear());
+		return newWeek;
 	}
 
 	public String toString() {
@@ -41,8 +48,20 @@ public class Week {
 		return year;
 	}
 
-	public void setWeek(int week) {
-		this.week = week;
+	public void setWeek(int week) throws WeekTooLowException, WeekTooHighException {
+		if (week < 1) {
+			throw new WeekTooLowException(
+					"Week shouldn�t be lower than 1.");
+
+		} else if (week > WEEKS_OF_YEAR) {
+			throw new WeekTooHighException(
+					"Week shouln�t be higher than 52.");
+
+		} else {
+
+			this.week = week;
+		}
+
 	}
 
 	public void setYear(int year) {
