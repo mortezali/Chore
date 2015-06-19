@@ -1,16 +1,23 @@
 package edu.hm.cs.swe2;
 
+import java.util.Random;
+
+import edu.hm.cs.sw2.inhabitant.Inhabitant;
+import edu.hm.cs.swe2.chore.Week;
+import edu.hm.cs.swe2.chore.chores.ChoreTable;
+
 public class MainTest {
 
 	public static void main(String[] args) {
 
+		String[] names = new String[] {"Josef", "Simon", "Adam", "Maria"
 
-		int test = 58;
+		};
+		Inhabitant in = new Inhabitant(names);
 		
-		System.out.println(test%52);
-		System.out.println(test/52);
-		
-		
+		ChoreTable ct = new ChoreTable(new Week(45, 2015), 2);
+		ct.printChoreTable();
+		ct.fillChoreTable(in);
 	}
 
 }

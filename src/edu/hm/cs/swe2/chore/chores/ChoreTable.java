@@ -11,7 +11,7 @@ public class ChoreTable {
 	private Chore chore;
 	private Week week;
 	private int weekCount;
-	private String[] choresToDo = new String[chore.getNumberOfChores()];
+	private String[] choresToDo;
 
 	public ChoreTable(Week week, int weekCount) {
 
@@ -33,25 +33,48 @@ public class ChoreTable {
 					.println("Fehler bei der Eingabe. Der Anzahl der Wochen darf nicht negativ sein oder null.");
 
 		}
+		chore = new Chore();
+		this.choresToDo = new String[chore.getNumberOfChores()];
 
 	}
+	
+	public int randomNumber(Inhabitant inhabitant){
+		int randomNumber = 0;
+		Random inhabitantsGenerator = new Random();
+		randomNumber = inhabitantsGenerator.nextInt(inhabitant.getNumberOfInhabitants());
+		
+		
+		
+		return randomNumber;
+	}
 
+	//Zuteilung f�r nur eine Woche
 	public void fillChoreTable(Inhabitant inhabitant) {
 
 		System.out.println("Zuteilen der Bewohner zu den Aufgaben: ");
+		
+		
+		
+		for (int i = 0; i < choresToDo.length; i++) {
+			
+			int rndNum = randomNumber(inhabitant);
 
-		Random inhabitantsGenerator = new Random();
-
-		int rndNum = inhabitantsGenerator.nextInt(inhabitant.getNumberOfInhabitants());
-		for (int i = 0; i < rndNum; i++) {
-			this.fillChoreTable(inhabitant);
+			choresToDo[i] = inhabitant.getName(rndNum) + "\t\t";
+			
 		}
 	}
 
+	
+	// Ist noch nicht komplett.
+	// 
 	public void printChoreTable() {
 		
-		System.out.println("Woche" + "\\" + "Aufgabe\t" + "Klo Putzen\t" + "Küche wischen\t" + "Abspülen\t" + "Kochen\t" + "\n"
-		+ week + "\t");
+		// Das stimmt hier noch nicht. du musst automatisch alle Aufgaben da hinschreiben lassen.
+		// nicht Hard codiert in den Code.
+		System.out.println("Woche" + "\\" + "Aufgabe\t" + "Klo Putzen\t" + "Küche wischen\t" + "Abspülen\t" + "Kochen\t");
 
+		// Mach z.B. eine Schleief und geb die Aufgaben dann alle aus.
+		
+		
 	}
 }
