@@ -6,7 +6,7 @@ public class Chore {
 			"Kochen" };
 
 	
-	//nochmal �berpr�fen Morteza
+	//nochmal überprüfen Morteza
 	String[] getChore(int index) {
 		return chore;
 	}

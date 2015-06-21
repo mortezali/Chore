@@ -37,44 +37,47 @@ public class ChoreTable {
 		this.choresToDo = new String[chore.getNumberOfChores()];
 
 	}
-	
-	public int randomNumber(Inhabitant inhabitant){
+
+	public int randomNumber(Inhabitant inhabitant) {
 		int randomNumber = 0;
 		Random inhabitantsGenerator = new Random();
-		randomNumber = inhabitantsGenerator.nextInt(inhabitant.getNumberOfInhabitants());
-		
-		
-		
+		randomNumber = inhabitantsGenerator.nextInt(inhabitant
+				.getNumberOfInhabitants());
+
 		return randomNumber;
 	}
 
-	//Zuteilung f�r nur eine Woche
+	// Zuteilung für nur eine Woche
 	public void fillChoreTable(Inhabitant inhabitant) {
 
 		System.out.println("Zuteilen der Bewohner zu den Aufgaben: ");
-		
-		
-		
+
 		for (int i = 0; i < choresToDo.length; i++) {
-			
+
 			int rndNum = randomNumber(inhabitant);
 
 			choresToDo[i] = inhabitant.getName(rndNum) + "\t\t";
-			
+
 		}
 	}
 
-	
 	// Ist noch nicht komplett.
-	// 
+	//
 	public void printChoreTable() {
-		
-		// Das stimmt hier noch nicht. du musst automatisch alle Aufgaben da hinschreiben lassen.
+
+		String output = "Woche" + "\\" + "Aufgabe\t";
+		// Das stimmt hier noch nicht. du musst automatisch alle Aufgaben da
+		// hinschreiben lassen.
 		// nicht Hard codiert in den Code.
-		System.out.println("Woche" + "\\" + "Aufgabe\t" + "Klo Putzen\t" + "Küche wischen\t" + "Abspülen\t" + "Kochen\t");
+		for (int i = 0; i < choresToDo.length; i++) {
+
+			System.out.println(output + i);
+
+		}
+
+		// System.out.println("Woche" + "\\" + "Aufgabe\t" +);
 
 		// Mach z.B. eine Schleief und geb die Aufgaben dann alle aus.
-		
-		
+
 	}
 }
