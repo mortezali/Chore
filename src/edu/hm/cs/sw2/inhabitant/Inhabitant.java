@@ -54,7 +54,7 @@ public class Inhabitant {
 		return names[index];
 	}
 
-	// kein Parameter verlagnt
+	// kein Parameter verlangt
 	public int getNumberOfInhabitants() {
 		return names.length;
 
@@ -73,6 +73,7 @@ public class Inhabitant {
 			}
 		}
 		this.names = newNames;
+		printInhabitants();
 		// von paul:
 		// String[] newNames = new String[getNumberOfInhabitants() + 1];
 		// for (int i = 0; i < newNames.length; i++) {
