@@ -1,5 +1,6 @@
 package edu.hm.cs.swe2.chore;
 
+import edu.hm.cs.swe2.chore.exception.IllegalWeekException;
 import edu.hm.cs.swe2.chore.exception.WeekTooHighException;
 import edu.hm.cs.swe2.chore.exception.WeekTooLowException;
 
@@ -10,18 +11,17 @@ public class Week {
 
 	final static int WEEKS_OF_YEAR = 52;
 
-	public Week(int week, int year)  {
+	public Week(int week, int year)  throws IllegalWeekException{
 		this.year = year;
 		try {
 			setWeek(week);
 		} catch (WeekTooLowException e) {
 			this.week = 1;
-			e.printStackTrace();
+
 		} catch (WeekTooHighException e) {
 			this.week = week%WEEKS_OF_YEAR;
 			this.year += week%WEEKS_OF_YEAR;
 			
-			e.printStackTrace();
 		}
 	}
 
@@ -34,8 +34,19 @@ public class Week {
 	// return this.week + figuresOfWeek;
 	//
 	// }
-	public Week addWeeks(int figuresOfWeek)throws WeekTooLowException {
-		Week newWeek = new Week(getWeek()+figuresOfWeek, getYear());
+	public Week addWeeks(int figuresOfWeek){
+		Week newWeek;
+		try {
+			
+			if(week<1){
+				throw new WeekTooLowException();
+			}
+			newWeek = new Week(getWeek()+figuresOfWeek, getYear());
+		} catch (IllegalWeekException e) {
+			// TODO Auto-generated catch block
+		return this;
+		}
+		
 		return newWeek;
 	}
 
@@ -48,7 +59,7 @@ public class Week {
 		return year;
 	}
 
-	public void setWeek(int week) throws WeekTooLowException, WeekTooHighException {
+	public void setWeek(int week) throws IllegalWeekException {
 		if (week < 1) {
 			throw new WeekTooLowException(
 					"Week shouldn´t be lower than 1.");

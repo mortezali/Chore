@@ -11,7 +11,7 @@ public class ChoreTable {
 	private Chore chore;
 	private Week week;
 	private int weekCount;
-	private String[] choresToDo;
+	private String[][] choresToDo;
 
 	public ChoreTable(Week week, int weekCount) {
 
@@ -34,7 +34,7 @@ public class ChoreTable {
 
 		}
 		chore = new Chore();
-		this.choresToDo = new String[chore.getNumberOfChores()];
+		this.choresToDo = new String[weekCount][chore.getNumberOfChores()];
 
 	}
 
@@ -52,12 +52,13 @@ public class ChoreTable {
 
 		System.out.println("Zuteilen der Bewohner zu den Aufgaben: ");
 
-		for (int i = 0; i < choresToDo.length; i++) {
+		for (int i = 0; i < weekCount ; i++) {
+			for (int j = 0; j < chore.getNumberOfChores(); j++){
 
 			int rndNum = randomNumber(inhabitant);
 
-			choresToDo[i] = inhabitant.getName(rndNum) + "\t\t";
-
+			choresToDo[i][j] = inhabitant.getName(rndNum);
+			}
 		}
 	}
 
@@ -65,16 +66,31 @@ public class ChoreTable {
 	//
 	public void printChoreTable() {
 
-	System.out.println("Woche" + "\\" + "Aufgabe\t");
+	System.out.print("Woche" + "\\" + "Aufgabe\t");
 		// Das stimmt hier noch nicht. du musst automatisch alle Aufgaben da hinschreiben lassen.
 		// nicht Hard codiert in den Code.
 		
-		for (int row = 0; row < chore.getNumberOfChores(); row++) {
-			System.out.println();
+		for (int column = 0; column < chore.getNumberOfChores(); column++) {
+			System.out.print(chore.getChore(column) + "\t");
 
 		}
 		
-		for (int clumn = 0; clumn < inhabitant.)
+		System.out.println();
+		
+		
+		for (int row = 0; row < weekCount; row++){
+			
+			for(int column = 0; column < chore.getNumberOfChores() + 1; column++){
+				if(column == 0){
+					System.out.print(week.addWeeks(row).toString() + "\t\t");
+				}else{
+					System.out.print( choresToDo[row][column-1]+ "\t\t");
+					
+				}
+			}
+			System.out.println();
+		
+		}
 
 		// System.out.println("Woche" + "\\" + "Aufgabe\t" +);
 

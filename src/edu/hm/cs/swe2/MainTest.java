@@ -15,9 +15,13 @@ public class MainTest {
 		};
 		Inhabitant in = new Inhabitant(names);
 		
-		ChoreTable ct = new ChoreTable(new Week(45, 2015), 2);
-		ct.printChoreTable();
+		ChoreTable ct = new ChoreTable(new Week(30, 2015), 7);
 		ct.fillChoreTable(in);
+		ct.printChoreTable();
+		
+			
+			
+		
 	}
 
 }

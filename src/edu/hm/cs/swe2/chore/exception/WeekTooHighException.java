@@ -1,6 +1,6 @@
 package edu.hm.cs.swe2.chore.exception;
 
-public class WeekTooHighException extends Exception{
+public class WeekTooHighException extends IllegalWeekException{
 	
 	public WeekTooHighException(){
 		super();

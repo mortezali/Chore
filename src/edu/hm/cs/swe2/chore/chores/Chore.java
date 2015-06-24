@@ -7,8 +7,8 @@ public class Chore {
 
 	
 	//nochmal überprüfen Morteza
-	String[] getChore(int index) {
-		return chore;
+	String getChore(int index) {
+		return chore[index];
 	}
 
 //	public void printChore(Chore index) {
