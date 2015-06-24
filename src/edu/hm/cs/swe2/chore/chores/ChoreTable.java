@@ -65,15 +65,16 @@ public class ChoreTable {
 	//
 	public void printChoreTable() {
 
-		String output = "Woche" + "\\" + "Aufgabe\t";
-		// Das stimmt hier noch nicht. du musst automatisch alle Aufgaben da
-		// hinschreiben lassen.
+	System.out.println("Woche" + "\\" + "Aufgabe\t");
+		// Das stimmt hier noch nicht. du musst automatisch alle Aufgaben da hinschreiben lassen.
 		// nicht Hard codiert in den Code.
-		for (int i = 0; i < choresToDo.length; i++) {
-
-			System.out.println(output + i);
+		
+		for (int row = 0; row < chore.getNumberOfChores(); row++) {
+			System.out.println();
 
 		}
+		
+		for (int clumn = 0; clumn < inhabitant.)
 
 		// System.out.println("Woche" + "\\" + "Aufgabe\t" +);
 

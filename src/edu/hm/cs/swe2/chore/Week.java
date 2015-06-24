@@ -19,7 +19,7 @@ public class Week {
 			e.printStackTrace();
 		} catch (WeekTooHighException e) {
 			this.week = week%WEEKS_OF_YEAR;
-			this.year += week/WEEKS_OF_YEAR;
+			this.year += week%WEEKS_OF_YEAR;
 			
 			e.printStackTrace();
 		}

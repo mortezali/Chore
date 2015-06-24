@@ -18,7 +18,7 @@ public class Inhabitant {
 		// for (int i = 0; i < name.length; i++){
 		// System.out.printf("In der WG wohnen " + name[index]);
 		// }
-		// Lösungsvorschlag Paul:
+		// 
 		String output = "In der WG wohnen ";
 		for (int i = 0; i < getNumberOfInhabitants(); i++) {
 			output += names[i];
