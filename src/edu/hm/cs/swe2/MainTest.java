@@ -8,20 +8,24 @@ import edu.hm.cs.swe2.chore.chores.ChoreTable;
 
 public class MainTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-		String[] names = new String[] {"Josef", "Simon", "Adam", "Maria"
+		String[] names = new String[] { "Josef", "Simon", "Adam", "Maria"
 
 		};
 		Inhabitant in = new Inhabitant(names);
-		
+
 		ChoreTable ct = new ChoreTable(new Week(30, 2015), 7);
 		ct.fillChoreTable(in);
 		ct.printChoreTable();
 		
-			
-			
 		
+	
+		
+		
+
 	}
 
+	
+	
 }

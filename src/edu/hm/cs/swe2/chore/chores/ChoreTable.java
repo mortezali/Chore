@@ -64,7 +64,7 @@ public class ChoreTable {
 
 	// Ist noch nicht komplett.
 	//
-	public void printChoreTable() {
+	public void printChoreTable() throws Exception {
 
 	System.out.print("Woche" + "\\" + "Aufgabe\t");
 		// Das stimmt hier noch nicht. du musst automatisch alle Aufgaben da hinschreiben lassen.

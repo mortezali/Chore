@@ -11,7 +11,7 @@ public class Week {
 
 	final static int WEEKS_OF_YEAR = 52;
 
-	public Week(int week, int year)  throws IllegalWeekException{
+	public Week(int week, int year)  throws Exception{
 		this.year = year;
 		try {
 			setWeek(week);
@@ -34,7 +34,7 @@ public class Week {
 	// return this.week + figuresOfWeek;
 	//
 	// }
-	public Week addWeeks(int figuresOfWeek){
+	public Week addWeeks(int figuresOfWeek) throws Exception{
 		Week newWeek;
 		try {
 			
